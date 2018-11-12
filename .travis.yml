@@ -11,6 +11,12 @@ scala:
 env:
 - JDK=oraclejdk8
 - JDK=openjdk8
+
+matrix:
+  exclude:
+  - os: linux-ppc64le
+    env: JDK=oraclejdk8
+    
 before_script:
   - jdk_switcher use $JDK
 script:
